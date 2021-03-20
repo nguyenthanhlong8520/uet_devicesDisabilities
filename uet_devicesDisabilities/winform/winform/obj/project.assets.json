@@ -126,11 +126,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nguye\\OneDrive\\Máy tính\\test_c#\\winform\\winform\\winform.csproj",
+      "projectUniqueName": "C:\\Users\\nguye\\OneDrive\\Máy tính\\uet_peopleDisabilities\\uet_devicesDisabilities\\uet_devicesDisabilities\\winform\\winform\\winform.csproj",
       "projectName": "winform",
-      "projectPath": "C:\\Users\\nguye\\OneDrive\\Máy tính\\test_c#\\winform\\winform\\winform.csproj",
+      "projectPath": "C:\\Users\\nguye\\OneDrive\\Máy tính\\uet_peopleDisabilities\\uet_devicesDisabilities\\uet_devicesDisabilities\\winform\\winform\\winform.csproj",
       "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nguye\\OneDrive\\Máy tính\\test_c#\\winform\\winform\\obj\\",
+      "outputPath": "C:\\Users\\nguye\\OneDrive\\Máy tính\\uet_peopleDisabilities\\uet_devicesDisabilities\\uet_devicesDisabilities\\winform\\winform\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",

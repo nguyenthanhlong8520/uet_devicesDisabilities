@@ -64,15 +64,24 @@ namespace winform
           
             string a = Encoding.UTF8.GetString(e.Message);
             var details = JObject.Parse(a);
-            label1.Text = "Temprature: : " + details["temprature"] + "°C";
-            label2.Text = "Humidity: " + details["humidity"] + "%";
+            if (details["temprature"] != null)
+            {
+                label1.Text = "Temprature: : " + details["temprature"] + "°C";
+                label2.Text = "Humidity: " + details["humidity"] + "%";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            publicMqtt();
-            MessageBox.Show("Sent");
+            try
+            {
+                publicMqtt();
+                MessageBox.Show("Sent");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Something went wrong on publicMqtt ");
+            }    
         }
 
         private void Form1_Load(object sender, EventArgs e)

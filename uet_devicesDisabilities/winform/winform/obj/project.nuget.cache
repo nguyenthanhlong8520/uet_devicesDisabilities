@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0o7dpU9iQ+eoJd/g4z7xn1zZju0Bz3gJ+RPdmH9tlCNF2uHQVB+18bJH7QpOsV85CIDuTuUz5k9GMslpurJyGg==",
+  "dgSpecHash": "h+2HSVjjiNKlhWykzjeuz3ciMy6ZldRf2OFlz1KGcqIwc/9nn5zBZwKG2K095k9wx9/O6084JvUXlvHQxkkZMQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nguye\\OneDrive\\Máy tính\\test_c#\\winform\\winform\\winform.csproj",
+  "projectFilePath": "C:\\Users\\nguye\\OneDrive\\Máy tính\\uet_peopleDisabilities\\uet_devicesDisabilities\\uet_devicesDisabilities\\winform\\winform\\winform.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nguye\\.nuget\\packages\\jobject\\1.0.0\\jobject.1.0.0.nupkg.sha512",
     "C:\\Users\\nguye\\.nuget\\packages\\m2mqtt\\4.3.0\\m2mqtt.4.3.0.nupkg.sha512",
