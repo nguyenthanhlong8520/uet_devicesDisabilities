@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "0o7dpU9iQ+eoJd/g4z7xn1zZju0Bz3gJ+RPdmH9tlCNF2uHQVB+18bJH7QpOsV85CIDuTuUz5k9GMslpurJyGg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nguye\\OneDrive\\Máy tính\\test_c#\\winform\\winform\\winform.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\jobject\\1.0.0\\jobject.1.0.0.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\m2mqtt\\4.3.0\\m2mqtt.4.3.0.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\newtonsoft.json\\13.0.1-beta1\\newtonsoft.json.13.0.1-beta1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'M2Mqtt 4.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "M2Mqtt",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}
