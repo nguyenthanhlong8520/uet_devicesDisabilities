@@ -20,17 +20,17 @@ namespace winform
         public Form1()
         {
             InitializeComponent();
+            
             Control.CheckForIllegalCrossThreadCalls = false;
             ThreadStart ts = new ThreadStart(Subscribe);
             Thread sub = new Thread(ts);
             sub.Start();
-
+            
         }
-
         public void publicMqtt()
         {
             
-            MqttClient localClient = new MqttClient("192.168.137.208");
+            MqttClient localClient = new MqttClient("192.168.2.190");
             string clientId = Guid.NewGuid().ToString();
             string user_name = "raspi4";
             string pass_word = "long8520";
