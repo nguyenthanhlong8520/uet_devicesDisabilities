@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainControl));
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,12 +57,9 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.temprature = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.humidity = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.show_temp = new System.Windows.Forms.Label();
+            this.show_h = new System.Windows.Forms.Label();
             this.Humidity_label = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel6 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2ProgressBar3 = new Guna.UI2.WinForms.Guna2ProgressBar();
@@ -90,19 +86,24 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.Temperature_lebel = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.guna2CustomGradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.guna2CustomGradientPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.temprature.SuspendLayout();
             this.guna2CustomGradientPanel6.SuspendLayout();
             this.guna2CustomGradientPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.guna2CircleProgressBar1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -129,7 +130,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(150, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(277, 20);
+            this.label2.Size = new System.Drawing.Size(337, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "We Create, We Design, We Develop";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -142,7 +143,7 @@
             this.label1.ForeColor = System.Drawing.Color.Yellow;
             this.label1.Location = new System.Drawing.Point(220, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 19);
+            this.label1.Size = new System.Drawing.Size(164, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "UET IOT DEVICES";
             // 
@@ -163,11 +164,11 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(19, 132);
+            this.label3.Location = new System.Drawing.Point(41, 128);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 19);
+            this.label3.Size = new System.Drawing.Size(79, 23);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Active Subscribers";
+            this.label3.Text = "Active ";
             // 
             // label4
             // 
@@ -177,7 +178,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(41, 164);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 16);
+            this.label4.Size = new System.Drawing.Size(45, 19);
             this.label4.TabIndex = 2;
             this.label4.Text = "Mon";
             // 
@@ -189,7 +190,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(101, 164);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 16);
+            this.label5.Size = new System.Drawing.Size(37, 19);
             this.label5.TabIndex = 2;
             this.label5.Text = "Tue";
             // 
@@ -201,7 +202,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Location = new System.Drawing.Point(161, 164);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 16);
+            this.label6.Size = new System.Drawing.Size(46, 19);
             this.label6.TabIndex = 2;
             this.label6.Text = "Wed";
             // 
@@ -213,7 +214,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label7.Location = new System.Drawing.Point(222, 164);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(30, 16);
+            this.label7.Size = new System.Drawing.Size(36, 19);
             this.label7.TabIndex = 2;
             this.label7.Text = "Thu";
             // 
@@ -225,7 +226,7 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label8.Location = new System.Drawing.Point(285, 164);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(23, 16);
+            this.label8.Size = new System.Drawing.Size(26, 19);
             this.label8.TabIndex = 2;
             this.label8.Text = "Fri";
             // 
@@ -237,7 +238,7 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label9.Location = new System.Drawing.Point(343, 164);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 16);
+            this.label9.Size = new System.Drawing.Size(33, 19);
             this.label9.TabIndex = 2;
             this.label9.Text = "Sat";
             // 
@@ -249,7 +250,7 @@
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label10.Location = new System.Drawing.Point(406, 164);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 16);
+            this.label10.Size = new System.Drawing.Size(38, 19);
             this.label10.TabIndex = 2;
             this.label10.Text = "Sun";
             // 
@@ -261,7 +262,7 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label11.Location = new System.Drawing.Point(41, 184);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 16);
+            this.label11.Size = new System.Drawing.Size(39, 19);
             this.label11.TabIndex = 2;
             this.label11.Text = "340";
             // 
@@ -273,7 +274,7 @@
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label12.Location = new System.Drawing.Point(101, 184);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(29, 16);
+            this.label12.Size = new System.Drawing.Size(39, 19);
             this.label12.TabIndex = 2;
             this.label12.Text = "442";
             // 
@@ -285,7 +286,7 @@
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label13.Location = new System.Drawing.Point(161, 184);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(29, 16);
+            this.label13.Size = new System.Drawing.Size(39, 19);
             this.label13.TabIndex = 2;
             this.label13.Text = "465";
             // 
@@ -297,7 +298,7 @@
             this.label14.ForeColor = System.Drawing.Color.Red;
             this.label14.Location = new System.Drawing.Point(222, 184);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(29, 16);
+            this.label14.Size = new System.Drawing.Size(39, 19);
             this.label14.TabIndex = 2;
             this.label14.Text = "107";
             // 
@@ -309,7 +310,7 @@
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label15.Location = new System.Drawing.Point(285, 184);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(29, 16);
+            this.label15.Size = new System.Drawing.Size(39, 19);
             this.label15.TabIndex = 2;
             this.label15.Text = "745";
             // 
@@ -321,7 +322,7 @@
             this.label16.ForeColor = System.Drawing.Color.SeaGreen;
             this.label16.Location = new System.Drawing.Point(343, 184);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(29, 16);
+            this.label16.Size = new System.Drawing.Size(39, 19);
             this.label16.TabIndex = 2;
             this.label16.Text = "908";
             // 
@@ -333,7 +334,7 @@
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label17.Location = new System.Drawing.Point(406, 184);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(29, 16);
+            this.label17.Size = new System.Drawing.Size(39, 19);
             this.label17.TabIndex = 2;
             this.label17.Text = "330";
             // 
@@ -343,9 +344,9 @@
             this.label18.BackColor = System.Drawing.Color.White;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label18.Location = new System.Drawing.Point(19, 218);
+            this.label18.Location = new System.Drawing.Point(45, 218);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(93, 19);
+            this.label18.Size = new System.Drawing.Size(118, 23);
             this.label18.TabIndex = 2;
             this.label18.Text = "All devices";
             // 
@@ -359,7 +360,7 @@
             this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.WhiteSmoke;
             this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.WhiteSmoke;
             this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.WhiteSmoke;
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(23, 240);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(45, 244);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             this.guna2CustomGradientPanel2.ShadowDecoration.Parent = this.guna2CustomGradientPanel2;
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(118, 127);
@@ -368,36 +369,44 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox3.Location = new System.Drawing.Point(4, 5);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(108, 71);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Location = new System.Drawing.Point(60, 82);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(51, 33);
+            this.button2.Size = new System.Drawing.Size(55, 33);
             this.button2.TabIndex = 7;
             this.button2.Text = "OFF";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.LawnGreen;
             this.button1.Location = new System.Drawing.Point(3, 82);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(51, 33);
             this.button1.TabIndex = 6;
             this.button1.Text = "ON";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // guna2CustomGradientPanel3
             // 
             this.guna2CustomGradientPanel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2CustomGradientPanel3.BorderRadius = 20;
+            this.guna2CustomGradientPanel3.Controls.Add(this.button8);
+            this.guna2CustomGradientPanel3.Controls.Add(this.button7);
+            this.guna2CustomGradientPanel3.Controls.Add(this.button6);
+            this.guna2CustomGradientPanel3.Controls.Add(this.button5);
             this.guna2CustomGradientPanel3.Controls.Add(this.pictureBox4);
             this.guna2CustomGradientPanel3.Controls.Add(this.button4);
             this.guna2CustomGradientPanel3.Controls.Add(this.button3);
@@ -405,120 +414,85 @@
             this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.WhiteSmoke;
             this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.WhiteSmoke;
             this.guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.WhiteSmoke;
-            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(189, 240);
+            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(238, 237);
             this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
             this.guna2CustomGradientPanel3.ShadowDecoration.Parent = this.guna2CustomGradientPanel3;
-            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(119, 127);
+            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(240, 148);
             this.guna2CustomGradientPanel3.TabIndex = 3;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox4.Location = new System.Drawing.Point(57, 3);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(113, 77);
+            this.pictureBox4.Size = new System.Drawing.Size(129, 77);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(65, 82);
+            this.button4.BackColor = System.Drawing.Color.Red;
+            this.button4.Location = new System.Drawing.Point(0, 37);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(51, 33);
             this.button4.TabIndex = 6;
-            this.button4.Text = "OFF";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Text = "-";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(0, 82);
+            this.button3.BackColor = System.Drawing.Color.LawnGreen;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(97, 86);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(51, 33);
+            this.button3.Size = new System.Drawing.Size(47, 36);
             this.button3.TabIndex = 5;
-            this.button3.Text = "ON";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // guna2CustomGradientPanel4
-            // 
-            this.guna2CustomGradientPanel4.BorderRadius = 20;
-            this.guna2CustomGradientPanel4.Controls.Add(this.pictureBox5);
-            this.guna2CustomGradientPanel4.Controls.Add(this.button6);
-            this.guna2CustomGradientPanel4.Controls.Add(this.button5);
-            this.guna2CustomGradientPanel4.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.WhiteSmoke;
-            this.guna2CustomGradientPanel4.FillColor3 = System.Drawing.Color.WhiteSmoke;
-            this.guna2CustomGradientPanel4.FillColor4 = System.Drawing.Color.WhiteSmoke;
-            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(352, 240);
-            this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
-            this.guna2CustomGradientPanel4.ShadowDecoration.Parent = this.guna2CustomGradientPanel4;
-            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(115, 127);
-            this.guna2CustomGradientPanel4.TabIndex = 3;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(3, 8);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(104, 74);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(57, 82);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(51, 33);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "OFF";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(0, 82);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(51, 33);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "ON";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // temprature
             // 
             this.temprature.Animated = true;
+            this.temprature.AnimationSpeed = 0.5F;
+            this.temprature.Controls.Add(this.show_temp);
             this.temprature.FillThickness = 10;
-            this.temprature.Location = new System.Drawing.Point(82, 422);
+            this.temprature.Location = new System.Drawing.Point(82, 418);
             this.temprature.Name = "temprature";
-            this.temprature.ProgressColor = System.Drawing.Color.Red;
-            this.temprature.ProgressColor2 = System.Drawing.Color.Red;
+            this.temprature.ProgressColor = System.Drawing.Color.Transparent;
+            this.temprature.ProgressColor2 = System.Drawing.Color.Transparent;
             this.temprature.ProgressThickness = 10;
             this.temprature.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.temprature.ShadowDecoration.Parent = this.temprature;
-            this.temprature.ShowPercentage = true;
-            this.temprature.Size = new System.Drawing.Size(108, 110);
+            this.temprature.Size = new System.Drawing.Size(118, 114);
             this.temprature.TabIndex = 4;
-            this.temprature.Value = 7;
+            this.temprature.Value = 26;
             this.temprature.ValueChanged += new System.EventHandler(this.guna2CircleProgressBar1_ValueChanged);
             // 
-            // humidity
+            // show_temp
             // 
-            this.humidity.Animated = true;
-            this.humidity.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.humidity.FillThickness = 6;
-            this.humidity.ForeColor = System.Drawing.Color.Black;
-            this.humidity.Location = new System.Drawing.Point(288, 422);
-            this.humidity.Name = "humidity";
-            this.humidity.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.humidity.ProgressColor2 = System.Drawing.Color.SeaGreen;
-            this.humidity.ProgressThickness = 6;
-            this.humidity.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.humidity.ShadowDecoration.Parent = this.humidity;
-            this.humidity.ShowPercentage = true;
-            this.humidity.Size = new System.Drawing.Size(108, 110);
-            this.humidity.TabIndex = 4;
-            this.humidity.Value = 9;
-            this.humidity.ValueChanged += new System.EventHandler(this.guna2CircleProgressBar2_ValueChanged);
+            this.show_temp.AutoSize = true;
+            this.show_temp.BackColor = System.Drawing.Color.Snow;
+            this.show_temp.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.show_temp.Location = new System.Drawing.Point(27, 47);
+            this.show_temp.Name = "show_temp";
+            this.show_temp.Size = new System.Drawing.Size(65, 31);
+            this.show_temp.TabIndex = 0;
+            this.show_temp.Text = "0 °C";
+            this.show_temp.Click += new System.EventHandler(this.label19_Click);
+            // 
+            // show_h
+            // 
+            this.show_h.AutoSize = true;
+            this.show_h.BackColor = System.Drawing.Color.MintCream;
+            this.show_h.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.show_h.Location = new System.Drawing.Point(33, 47);
+            this.show_h.Name = "show_h";
+            this.show_h.Size = new System.Drawing.Size(54, 31);
+            this.show_h.TabIndex = 7;
+            this.show_h.Text = "0 %";
+            this.show_h.Click += new System.EventHandler(this.label19_Click_1);
             // 
             // Humidity_label
             // 
@@ -526,12 +500,13 @@
             this.Humidity_label.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Humidity_label.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.Humidity_label.ForeColor = System.Drawing.Color.Black;
-            this.Humidity_label.Location = new System.Drawing.Point(304, 392);
+            this.Humidity_label.Location = new System.Drawing.Point(314, 392);
             this.Humidity_label.Name = "Humidity_label";
-            this.Humidity_label.Size = new System.Drawing.Size(78, 21);
+            this.Humidity_label.Size = new System.Drawing.Size(93, 23);
             this.Humidity_label.TabIndex = 2;
             this.Humidity_label.Text = "Humidity";
             this.Humidity_label.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Humidity_label.Click += new System.EventHandler(this.Humidity_label_Click);
             // 
             // guna2CustomGradientPanel6
             // 
@@ -600,7 +575,7 @@
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label25.Location = new System.Drawing.Point(23, 16);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(127, 19);
+            this.label25.Size = new System.Drawing.Size(162, 23);
             this.label25.TabIndex = 2;
             this.label25.Text = "Other Functions";
             // 
@@ -729,7 +704,7 @@
             this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label28.Location = new System.Drawing.Point(12, 36);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(90, 17);
+            this.label28.Size = new System.Drawing.Size(117, 21);
             this.label28.TabIndex = 2;
             this.label28.Text = "Last 48 Hours";
             // 
@@ -741,7 +716,7 @@
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label27.Location = new System.Drawing.Point(8, 13);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(150, 19);
+            this.label27.Size = new System.Drawing.Size(190, 23);
             this.label27.TabIndex = 2;
             this.label27.Text = "Real Time Progress";
             // 
@@ -753,7 +728,7 @@
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label26.Location = new System.Drawing.Point(25, 45);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(85, 21);
+            this.label26.Size = new System.Drawing.Size(103, 23);
             this.label26.TabIndex = 2;
             this.label26.Text = "April 2020";
             // 
@@ -765,7 +740,7 @@
             this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label30.Location = new System.Drawing.Point(26, 144);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(67, 17);
+            this.label30.Size = new System.Drawing.Size(89, 21);
             this.label30.TabIndex = 2;
             this.label30.Text = "Average:";
             // 
@@ -777,7 +752,7 @@
             this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label29.Location = new System.Drawing.Point(26, 111);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(69, 17);
+            this.label29.Size = new System.Drawing.Size(94, 21);
             this.label29.TabIndex = 2;
             this.label29.Text = "Yesterday";
             // 
@@ -789,7 +764,7 @@
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label24.Location = new System.Drawing.Point(26, 78);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(50, 17);
+            this.label24.Size = new System.Drawing.Size(66, 21);
             this.label24.TabIndex = 2;
             this.label24.Text = "Today:";
             // 
@@ -866,25 +841,83 @@
             this.guna2Button5.TabIndex = 4;
             this.guna2Button5.UseTransparentBackground = true;
             // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.TargetControl = this;
-            // 
             // Temperature_lebel
             // 
             this.Temperature_lebel.AutoSize = true;
             this.Temperature_lebel.Location = new System.Drawing.Point(86, 392);
             this.Temperature_lebel.Name = "Temperature_lebel";
-            this.Temperature_lebel.Size = new System.Drawing.Size(112, 21);
+            this.Temperature_lebel.Size = new System.Drawing.Size(122, 23);
             this.Temperature_lebel.TabIndex = 6;
-            this.Temperature_lebel.Text = "Temperature";
+            this.Temperature_lebel.Text = "Temprature";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.LightCoral;
+            this.button5.Location = new System.Drawing.Point(0, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(51, 30);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "+";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Yellow;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Location = new System.Drawing.Point(3, 76);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(48, 30);
+            this.button6.TabIndex = 8;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.LightCoral;
+            this.button7.Location = new System.Drawing.Point(190, 3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(47, 28);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "^";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.OrangeRed;
+            this.button8.Location = new System.Drawing.Point(190, 39);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(47, 29);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "V";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // guna2CircleProgressBar1
+            // 
+            this.guna2CircleProgressBar1.Animated = true;
+            this.guna2CircleProgressBar1.AnimationSpeed = 0.5F;
+            this.guna2CircleProgressBar1.Controls.Add(this.show_h);
+            this.guna2CircleProgressBar1.FillThickness = 10;
+            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(295, 418);
+            this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
+            this.guna2CircleProgressBar1.ProgressColor = System.Drawing.Color.Transparent;
+            this.guna2CircleProgressBar1.ProgressColor2 = System.Drawing.Color.Transparent;
+            this.guna2CircleProgressBar1.ProgressThickness = 10;
+            this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleProgressBar1.ShadowDecoration.Parent = this.guna2CircleProgressBar1;
+            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(118, 114);
+            this.guna2CircleProgressBar1.TabIndex = 8;
+            this.guna2CircleProgressBar1.Value = 26;
             // 
             // MainControl
             // 
+            this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.guna2CircleProgressBar1);
             this.Controls.Add(this.Temperature_lebel);
-            this.Controls.Add(this.humidity);
             this.Controls.Add(this.Humidity_label);
             this.Controls.Add(this.guna2Button5);
             this.Controls.Add(this.guna2Button4);
@@ -892,7 +925,6 @@
             this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.temprature);
-            this.Controls.Add(this.guna2CustomGradientPanel4);
             this.Controls.Add(this.guna2CustomGradientPanel6);
             this.Controls.Add(this.guna2CustomGradientPanel3);
             this.Controls.Add(this.guna2CustomGradientPanel2);
@@ -923,13 +955,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.guna2CustomGradientPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.guna2CustomGradientPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.temprature.ResumeLayout(false);
+            this.temprature.PerformLayout();
             this.guna2CustomGradientPanel6.ResumeLayout(false);
             this.guna2CustomGradientPanel6.PerformLayout();
             this.guna2CustomGradientPanel7.ResumeLayout(false);
             this.guna2CustomGradientPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.guna2CircleProgressBar1.ResumeLayout(false);
+            this.guna2CircleProgressBar1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -959,9 +993,7 @@
         private System.Windows.Forms.Label label18;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel4;
         private Guna.UI2.WinForms.Guna2CircleProgressBar temprature;
-        private Guna.UI2.WinForms.Guna2CircleProgressBar humidity;
         private System.Windows.Forms.Label Humidity_label;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel6;
         private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar3;
@@ -988,16 +1020,20 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label Temperature_lebel;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label show_temp;
+        private System.Windows.Forms.Label show_h;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
     }
 }
